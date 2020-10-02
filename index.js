@@ -12,6 +12,7 @@ const gen = (strs, ...sources) => {
 			(typeof sources[i] === "function" ? sources[i]() : sources[i]) ||
 			[];
 		const x = pickRandFrom(source) || "";
+
 		perms = perms * (source.length || 1);
 		acc = acc + str + x;
 	});
@@ -22,7 +23,7 @@ const gen = (strs, ...sources) => {
 };
 
 const preamble = [
-	"can't wait until there's",
+	"I can't wait until there's",
 	"Here's a world I'd like to see:",
 	"Hey, how 'bout",
 	"How much longer until we have",
@@ -31,22 +32,37 @@ const preamble = [
 	"We'll never #resist @realdonaldtrump without",
 	"what's the best way to #disrupt #startups? Simple:",
 	"When will @elonmusk have",
+	"Have people tried putting",
+	"Not enough companies have",
+	"Thought leaders are trying to get",
+	"Crossing the chasm requires",
+	"All top scale-ups know you need",
+	"Serious talk: I need to see",
+	"In 2021, the world needs",
+	"It's 2020! When will we get",
 ];
 
 const number = [
-	"10X",
+	"10X more",
 	"a few",
-	"a fucking butt tonne",
-	"a handful",
-	"juuuuuusst a few",
-	"lots",
+	"a fucking butt tonne more",
+	"a handful of",
+	"juuuuuusst a few more",
+	"lots of",
 	"many",
 	"many many",
 	"many many many",
 	"many many many many",
-	"oodles",
+	"oodles of",
 	"some",
-	"tonnes",
+	"tonnes of",
+	"more",
+	"a board room full of",
+	"a slide deck of",
+	"Unsplashed stock photos with",
+	"enough",
+	"the",
+	"a team of",
 ];
 
 const xx = [
@@ -69,6 +85,10 @@ const xx = [
 	"skirts",
 	"spicy mamma jammas",
 	"womenfolk",
+	"cutie-pies",
+	"strong independent women",
+	"gals",
+
 ];
 
 const job = [
@@ -109,6 +129,11 @@ const job = [
 	"advocating for vue.js",
 	"explaining monads to people",
 	"opening issues",
+	"running open source projects",
+	"taking over",
+	"calling the shots",
+	"building microservices",
+	"being thought leaders",
 ];
 
 const postamble = [
@@ -116,8 +141,8 @@ const postamble = [
 	". But hey, what do I know?!?",
 	". But maybe that's just me, what do you think?",
 	", don't you think..?",
-	". do you feel me?",
-	". #femenism",
+	". Do you feel me?",
+	". #Femenism",
 	". #FridayIsGuyday",
 	"; if not now, then when?",
 	"... Lovely",
@@ -132,6 +157,10 @@ const postamble = [
 	". #TuesdayTutelage",
 	". #WisdomWednesday",
 	". @ycombinator",
+	". It is #2020 after all",
+	". Do I need to say it again?",
+	". And yet we've been saying this for years!",
+	". #EveryLittleHelps",
 ];
 
-console.log(gen`${preamble} ${number} more ${xx} ${job}${postamble}`);
+console.log(gen`${preamble} ${number} ${xx} ${job}${postamble}`);
