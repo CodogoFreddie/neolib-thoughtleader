@@ -144,6 +144,7 @@ const generator = rge({
 	],
 	hashtag: () => [
 		"#EveryLittleHelps",
+		"#JusticeServed",
 		"#FridayIsGuyday",
 		"#JustMyTake",
 		"#MotivationMonday",
