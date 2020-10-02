@@ -3,9 +3,10 @@
 const rge = require("@freddieridell/regex-generator-expander");
 
 const generator = rge({
-	root: ({ preamble, number, xx, job, postamble, hashtags }) => [
+	root: ({ preamble, number, xx, job, postamble, hashtags, ats }) => [
 		rge`${preamble} ${number} more ${xx} ${job}. ${postamble}`,
 		rge`${preamble} ${number} more ${xx} ${job}. ${postamble} ${hashtags}`,
+		rge`${preamble} ${number} more ${xx} ${job}. ${postamble} ${ats} ${hashtags}`,
 	],
 
 	preamble: () => [
@@ -122,7 +123,6 @@ const generator = rge({
 	],
 
 	postamble: ({}) => [
-		"@ycombinator",
 		"And yet we've been saying this for years!",
 		"Awooooogaa",
 		"But hey, what do I know?!?",
@@ -136,6 +136,9 @@ const generator = rge({
 		"if not now, then when?",
 		"nice",
 	],
+
+	ats: ({ at }) => [rge`${at}`, rge`${at} ${at}`],
+	at: () => ["@ycombinator"],
 
 	hashtags: ({ hashtag }) => [
 		rge`${hashtag}`,
